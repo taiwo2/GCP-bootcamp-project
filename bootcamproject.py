@@ -40,7 +40,7 @@ local_file_path_1 = 'RAW/first_file.csv'
 local_file_path_2 = 'RAW/second_file.csv'
 
 # Function to extract data from GCS for the first file
-def extract_data_from_gcs_1():
+def extract_data_from_gcs_1(bucket_name, source_blob_name_1, local_file_path_1):
     try:
         # Download the data from GCS to the local filesystem
         transfer = GCSToLocalFilesystemTransfer(
@@ -56,7 +56,7 @@ def extract_data_from_gcs_1():
         raise Exception(f"Failed to extract data from GCS (First File): {str(e)}")
 
 # Function to extract data from GCS for the second file
-def extract_data_from_gcs_2():
+def extract_data_from_gcs_2(bucket_name, source_blob_name_2, local_file_path_2):
     try:
         # Download the data from GCS to the local filesystem
         transfer = GCSToLocalFilesystemTransfer(
